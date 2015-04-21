@@ -299,15 +299,16 @@ function initObjects() {
 
     var urls = [];
     for (var i = 0; i < 6; i++) {
-        var url = "textures/stripe6.jpg";
+        var url = "textures/stripe2048.jpg";
         urls.push(url);
     }
-    // texCube = THREE.ImageUtils.loadTextureCube(urls, THREE.CubeRefractionMapping, function() {});
-    texCube = THREE.ImageUtils.loadTexture("textures/stripe6.jpg");
-    dazzleMaterial = new THREE.MeshBasicMaterial({color: 0xffffff, map: texCube});
-    dazzleGeometry = new THREE.BoxGeometry(100,100,100);
+    texCube = THREE.ImageUtils.loadTextureCube(urls);
+    // texCube.mapping = THREE.CubeReflectionMapping;
+    // texCube = THREE.ImageUtils.loadTexture("textures/stripe6.jpg");
+    dazzleMaterial = new THREE.MeshBasicMaterial({color: 0xffffff, envMap: texCube, combine: THREE.MixOperation, useRefract: 1, refractionRatio: 0.1});
+    dazzleGeometry = new THREE.SphereGeometry(10,100,100);
     dazzleObject = new THREE.Mesh(dazzleGeometry, dazzleMaterial);
-    dazzleObject.position.y = 50;
+    dazzleObject.position.y = 5;
     scene.add(dazzleObject);
     room.add(dazzleObject);
 

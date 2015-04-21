@@ -133,7 +133,9 @@ THREE.ShaderDeferred = {
 
 				"samplerNormalDepth": { type: "t", value: null },
 				"viewWidth": 		{ type: "f", value: 800 },
-				"viewHeight": 		{ type: "f", value: 600 }
+				"viewHeight": 		{ type: "f", value: 600 },
+				"combine": {type: "i", value: null},
+				"useRefract": {type: "i", value: null}
 			}
 
 		] ),

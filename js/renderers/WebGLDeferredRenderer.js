@@ -200,7 +200,7 @@ THREE.WebGLDeferredRenderer = function ( parameters ) {
 		if ( originalMaterial.envMap ) {
 
 			uniforms.envMap.value = originalMaterial.envMap;
-			uniforms.useRefract.value = originalMaterial.envMap.mapping instanceof THREE.CubeRefractionMapping;
+			// uniforms.useRefract.value = originalMaterial.envMap.mapping instanceof THREE.CubeRefractionMapping;
 			uniforms.refractionRatio.value = originalMaterial.refractionRatio;
 			uniforms.combine.value = originalMaterial.combine;
 			uniforms.reflectivity.value = originalMaterial.reflectivity;
